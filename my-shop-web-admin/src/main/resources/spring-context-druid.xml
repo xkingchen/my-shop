@@ -3,31 +3,31 @@
 xmlns:context="http://www.springframework.org/schema/context"
 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- ¼ÓÔØÅäÖÃÊôÐÔÎÄ¼þ -->
-<context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties"/>
+<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ -->
+<context:property-placeholder ignore-unresolvable="true" location="classpath:myshop.properties"/>
 
-<!-- Êý¾ÝÔ´ÅäÖÃ, Ê¹ÓÃ Druid Êý¾Ý¿âÁ¬½Ó³Ø -->
+<!-- ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½, Ê¹ï¿½ï¿½ Druid ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ -->
 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-<!-- Êý¾ÝÔ´Çý¶¯Àà¿É²»Ð´£¬DruidÄ¬ÈÏ»á×Ô¶¯¸ù¾ÝURLÊ¶±ðDriverClass -->
+<!-- ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ð´ï¿½ï¿½DruidÄ¬ï¿½Ï»ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½URLÊ¶ï¿½ï¿½DriverClass -->
 <property name="driverClassName" value="${jdbc.driverClass}"/>
 
-<!-- »ù±¾ÊôÐÔ url¡¢user¡¢password -->
+<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ urlï¿½ï¿½userï¿½ï¿½password -->
 <property name="url" value="${jdbc.connectionURL}"/>
 <property name="username" value="${jdbc.username}"/>
 <property name="password" value="${jdbc.password}"/>
 
-<!-- ÅäÖÃ³õÊ¼»¯´óÐ¡¡¢×îÐ¡¡¢×î´ó -->
+<!-- ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 <property name="initialSize" value="${jdbc.pool.init}"/>
 <property name="minIdle" value="${jdbc.pool.minIdle}"/>
 <property name="maxActive" value="${jdbc.pool.maxActive}"/>
 
-<!-- ÅäÖÃ»ñÈ¡Á¬½ÓµÈ´ý³¬Ê±µÄÊ±¼ä -->
+<!-- ï¿½ï¿½ï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ÓµÈ´ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê±ï¿½ï¿½ -->
 <property name="maxWait" value="60000"/>
 
-<!-- ÅäÖÃ¼ä¸ô¶à¾Ã²Å½øÐÐÒ»´Î¼ì²â£¬¼ì²âÐèÒª¹Ø±ÕµÄ¿ÕÏÐÁ¬½Ó£¬µ¥Î»ÊÇºÁÃë -->
+<!-- ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Ã²Å½ï¿½ï¿½ï¿½Ò»ï¿½Î¼ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ø±ÕµÄ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½Î»ï¿½Çºï¿½ï¿½ï¿½ -->
 <property name="timeBetweenEvictionRunsMillis" value="60000"/>
 
-<!-- ÅäÖÃÒ»¸öÁ¬½ÓÔÚ³ØÖÐ×îÐ¡Éú´æµÄÊ±¼ä£¬µ¥Î»ÊÇºÁÃë -->
+<!-- ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½Î»ï¿½Çºï¿½ï¿½ï¿½ -->
 <property name="minEvictableIdleTimeMillis" value="300000"/>
 
 <property name="validationQuery" value="${jdbc.testSql}"/>
@@ -35,7 +35,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 <property name="testOnBorrow" value="false"/>
 <property name="testOnReturn" value="false"/>
 
-<!-- ÅäÖÃ¼à¿ØÍ³¼ÆÀ¹½ØµÄfilters -->
+<!-- ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½filters -->
 <property name="filters" value="stat"/>
 </bean>
 </beans>
